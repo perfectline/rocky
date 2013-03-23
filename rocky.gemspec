@@ -17,8 +17,8 @@ Gem::Specification.new do |spec|
   spec.files = Dir["{lib}/**/*"] + Dir["vendor/**/*"] + ["Rakefile", "README.md"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency("coffee-script", "~> 2.2.0")
-  spec.add_dependency("jquery-rails",  "~> 2.2.1")
+  spec.add_dependency("coffee-script")
+  spec.add_dependency("jquery-rails")
 
   spec.add_development_dependency "rake"
 end
