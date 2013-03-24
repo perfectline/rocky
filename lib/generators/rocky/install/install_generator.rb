@@ -14,7 +14,7 @@ module Rocky
 
       def inject_middleware
         inject_into_file "app/assets/javascripts/application.js", :after => "//= require jquery_ujs" do
-          "\n//= require underscore\n//= require backbone\n//= require middleware\n//= require application/#{application_name.underscore}"
+          "\n//= require underscore\n//= require backbone\n//= require xdomain\n//= require middleware\n//= require application/#{application_name.underscore}"
         end
       end
 
