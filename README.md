@@ -3,7 +3,7 @@
 Current status: Middleware in development
 
 ### Latest News:
-  + 26.03 JsonForm Component added to core.
+  + 26.03 JsonForm Component added to core, reBind() added to Base class.
 
 Rocky is CoffeeScript Middleware that binds class objects with HTML page elements.
 Class objects interact with page elements through Backbone events.
