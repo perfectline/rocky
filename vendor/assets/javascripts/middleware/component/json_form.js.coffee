@@ -20,7 +20,7 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
     @submitButton.on "click", =>
       @form.trigger("submit.rails")
 
-    @form.find("input").keypress (e) ->
+    @form.find("input").keypress (e) =>
       if e.which == 13
         @form.trigger("submit.rails")
         e.preventDefault()
