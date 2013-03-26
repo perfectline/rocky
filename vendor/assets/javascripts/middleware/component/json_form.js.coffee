@@ -4,7 +4,7 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
     @initForm()
 
   initForm: =>
-    if @container.propName("tagName") == "FORM"
+    if @container.prop("tagName") == "FORM"
       @form = @container
     else
       @form = @container.find("form")
@@ -25,7 +25,7 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
         @form.trigger("submit.rails")
         e.preventDefault()
 
-    @cancelButoon = @form.find("*[data-action='cancel']")
+    @cancelButton = @form.find("*[data-action='cancel']")
     @cancelButton.on "click", =>
       @form.trigger("request:cancel")
 
