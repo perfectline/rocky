@@ -9,6 +9,8 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
     else
       @form = @container.find("form")
 
+    @setCompletedStatusName()
+
     @form.on "ajax:success",      @createResponse
     @form.on "request:completed", @completeForm
     @form.on "request:failed",    @updateForm
@@ -22,15 +24,18 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
     @cancelButton.on "click", =>
       @form.trigger("request:cancel")
 
-    @createResponse: (event, json) =>
-      if json["completed"] == true
-        @form.trigger("request:completed", json)
-      else
-        @form.trigger("request:failed", json)
+  setCompletedStatusName: (status_name = "completed") =>
+    @completedStatusName = status_name
 
-    @completeForm: (event, json) =>
+  createResponse: (event, json) =>
+    if json[@completedStatusName] == true
+      @form.trigger("request:completed", json)
+    else
+      @form.trigger("request:failed", json)
 
-    @updateForm: (event, json) =>
+  completeForm: (event, json) =>
 
-    @cancelForm:  =>
-      @container.remove()
+  updateForm: (event, json) =>
+
+  cancelForm:  =>
+    @container.remove()
