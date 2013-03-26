@@ -12,5 +12,8 @@ class Middleware.System.Base
   @bindOne: (selector) ->
     new @($(selector))
 
+  reBind: =>
+    @.constructor(@.container)
+
   constructor: (@container) ->
     _.extend(@, Backbone.Events)

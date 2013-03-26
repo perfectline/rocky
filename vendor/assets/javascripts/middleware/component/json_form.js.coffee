@@ -9,6 +9,9 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
     else
       @form = @container.find("form")
 
+    if @form.length == 0
+      return false
+
     @setCompletedStatusName()
 
     @form.on "ajax:success",      @createResponse
