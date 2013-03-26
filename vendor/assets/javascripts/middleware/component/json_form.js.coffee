@@ -18,7 +18,12 @@ class Middleware.Component.JsonForm extends Middleware.System.Base
 
     @submitButton = @form.find("*[data-action='submit']")
     @submitButton.on "click", =>
-      @form.trigger("submit")
+      @form.trigger("submit.rails")
+
+    @form.find("input").keypress (e) ->
+      if e.which == 13
+        @form.trigger("submit.rails")
+        e.preventDefault()
 
     @cancelButoon = @form.find("*[data-action='cancel']")
     @cancelButton.on "click", =>
