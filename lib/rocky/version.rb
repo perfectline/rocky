@@ -1,3 +1,3 @@
 module Rocky
-  VERSION = "0.1.2.pre"
+  VERSION = "0.1.1"
 end
