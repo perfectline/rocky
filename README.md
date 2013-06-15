@@ -1,5 +1,7 @@
 # Rocky
 
+[![Build Status](https://travis-ci.org/Semjonow/rocky.png?branch=master)](https://travis-ci.org/Semjonow/rocky)
+
 Current status: Middleware in development
 
 ### Latest News:
