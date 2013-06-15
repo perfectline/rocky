@@ -4,13 +4,15 @@ class Middleware.System.Base
     collection = []
     instance = @
 
-    $(selector).each ->
-      collection.push(new instance($(@)))
+    if $(selector).length > 0
+      $(selector).each ->
+        collection.push(new instance($(@)))
 
     collection
 
   @bindOne: (selector) ->
-    new @($(selector))
+    if $(selector).length > 0
+      new @($(selector))
 
   reBind: =>
     @.constructor(@.container)
