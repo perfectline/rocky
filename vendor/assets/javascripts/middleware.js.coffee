@@ -7,5 +7,3 @@ window.Middleware = {
   System: {}
   Component: {}
   }
-
-window.Middleware.Env = new Middleware.System.Env
